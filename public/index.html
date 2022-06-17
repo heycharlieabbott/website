@@ -4,21 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <script src="../src/index.js"></script>
-    <h1>Charlie Abbott</h1>
-    <h2>Web Development, Computer Art</h2>
-    <nav>
-      <li>Web Synthesizer</li>
-      <li>Fog Racer</li>
-      <li>Itch io works</li>
-      <li>Video Works</li>
-      <li>Audio Works</li>
-      <li>About</li>
-    </nav>
+    <div class="grid">
+      <header class="grid__header">
+        <h1>Charlie Abbott</h1>
+        <h2>
+          Web Development <br />
+          Experimental Music <br />
+          Computer Art
+        </h2>
+      </header>
+      <nav class="grid__nav">
+        <li class="grid__nav__item WebSynth">Web Synthesizer</li>
+        <li class="grid__nav__item FogRacer">Fog Racer</li>
+        <li class="grid__nav__item InteractiveArt">Interactive Art</li>
+        <li class="grid__nav__item Video">Video</li>
+        <li class="grid__nav__item Audio">Audio</li>
+        <li class="grid__nav__item About">About</li>
+      </nav>
 
-    <main>Main Content</main>
+      <main class="grid__main"></main>
+    </div>
   </body>
 </html>
