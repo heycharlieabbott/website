@@ -1,5 +1,7 @@
 import "./styles/main.scss";
 import "./styles/globals/_boilerplate.scss";
+import "../src/canvas.js";
+import * as THREE from "three";
 
 let WebSynthPage = false;
 let FogRacerPage = false;
