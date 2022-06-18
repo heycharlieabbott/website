@@ -22,6 +22,7 @@ module.exports = {
       title: "Charlie Abbott",
       filename: "index.html",
       template: "public/index.html",
+      favicon: "./public/favicon.ico",
     }),
   ],
   devtool: "source-map",

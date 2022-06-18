@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  box-sizing: border-box;\n  font-size: 100%;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: inherit;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: \"Lato\", sans-serif;\n  background-color: var(--background-color);\n  color: var(--text-color);\n}\n\nh2 {\n  font-size: small;\n}\n\nli {\n  list-style: none;\n}\n\nh1,\nh2,\nh3 {\n  font-weight: 700;\n  line-height: 1.1;\n  margin-top: 0;\n}\n\np {\n  margin-top: 0;\n}\n\na,\na:visited,\na:active {\n  text-decoration: none;\n}\n\n:root {\n  --background-color: rgba(202, 35, 35, 100);\n  --text-color: hsl(0, 0%, 100%);\n}\n\n.grid {\n  display: grid;\n  grid-template-columns: 1fr 4fr;\n  grid-template-rows: 1fr 5fr;\n  padding: 5px;\n  gap: 1rem;\n  height: 100vh;\n  gap: 1 rem;\n}\n.grid__header {\n  grid-column: 1/1;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  border: 1px solid white;\n  border-radius: 2px 10px 20px;\n  padding: 5px;\n}\n.grid__nav {\n  grid-column: 1/1;\n  display: flex;\n  gap: 2rem;\n  flex-direction: column;\n  width: 100%;\n  border: 1px solid white;\n  border-radius: 2px 10px 20px;\n  justify-content: space-evenly;\n  align-items: center;\n}\n.grid__nav__item {\n  width: 100%;\n  text-decoration: underline;\n  text-decoration-color: rgba(255, 255, 255, 0);\n  padding: 5px;\n  user-select: none;\n  transition: text-decoration-color 500ms;\n}\n.grid__nav__item:hover {\n  text-decoration-color: rgb(255, 255, 255);\n  cursor: pointer;\n}\n.grid__main {\n  grid-column: 2 2;\n}", "",{"version":3,"sources":["webpack://./src/styles/globals/_boilerplate.scss","webpack://./src/styles/main.scss","webpack://./src/styles/globals/_typography.scss","webpack://./src/styles/globals/_colors.scss"],"names":[],"mappings":"AAAA;EACE,sBAAA;EACA,eAAA;ACCF;;ADEA;;;EAGE,mBAAA;ACCF;;ADEA;EACE,SAAA;EACA,UAAA;EACA,+BAAA;EACA,yCAAA;EACA,wBAAA;ACCF;;ADEA;EACE,gBAAA;ACCF;;ADEA;EACE,gBAAA;ACCF;;ACzBA;;;EAGE,gBAAA;EACA,gBAAA;EACA,aAAA;AD4BF;;ACzBA;EACE,aAAA;AD4BF;;ACzBA;;;EAGE,qBAAA;AD4BF;;AE3CA;EAEE,0CAAA;EAEA,8BAAA;AF4CF;;AA1CA;EACE,aAAA;EACA,8BAAA;EACA,2BAAA;EAEA,YAAA;EACA,SAAA;EACA,aAAA;EACA,UAAA;AA4CF;AA1CE;EACE,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,WAlBO;EAmBP,uBAlBK;EAmBL,4BAlBQ;EAmBR,YAAA;AA4CJ;AAzCE;EACE,gBAAA;EACA,aAAA;EACA,SAAA;EACA,sBAAA;EACA,WA7BO;EA8BP,uBA7BK;EA8BL,4BA7BQ;EA8BR,6BAAA;EACA,mBAAA;AA2CJ;AAxCE;EACE,WAAA;EACA,0BAAA;EACA,6CAAA;EACA,YAAA;EACA,iBAAA;EAOA,uCAAA;AAoCJ;AAzCI;EACE,yCAAA;EACA,eAAA;AA2CN;AArCE;EACE,gBAAA;AAuCJ","sourcesContent":["html {\r\n  box-sizing: border-box;\r\n  font-size: 100%;\r\n}\r\n\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: inherit;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: \"Lato\", sans-serif;\r\n  background-color: var(--background-color);\r\n  color: var(--text-color);\r\n}\r\n\r\nh2 {\r\n  font-size: small;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n","@forward \"globals\";\r\n\r\n$sidewith: 100%;\r\n$border: 1px solid white;\r\n$borderrad: 2px 10px 20px;\r\n\r\n.grid {\r\n  display: grid;\r\n  grid-template-columns: 1fr 4fr;\r\n  grid-template-rows: 1fr 5fr;\r\n  // border: 2px dotted blue;\r\n  padding: 5px;\r\n  gap: 1rem;\r\n  height: 100vh;\r\n  gap: 1 rem;\r\n\r\n  &__header {\r\n    grid-column: 1 / 1;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: $sidewith;\r\n    border: $border;\r\n    border-radius: $borderrad;\r\n    padding: 5px;\r\n  }\r\n\r\n  &__nav {\r\n    grid-column: 1 / 1;\r\n    display: flex;\r\n    gap: 2rem;\r\n    flex-direction: column;\r\n    width: $sidewith;\r\n    border: $border;\r\n    border-radius: $borderrad;\r\n    justify-content: space-evenly;\r\n    align-items: center;\r\n  }\r\n\r\n  &__nav__item {\r\n    width: 100%;\r\n    text-decoration: underline;\r\n    text-decoration-color: rgb(255, 255, 255, 0);\r\n    padding: 5px;\r\n    user-select: none;\r\n\r\n    &:hover {\r\n      text-decoration-color: rgb(255, 255, 255, 255);\r\n      cursor: pointer;\r\n    }\r\n\r\n    transition: text-decoration-color 500ms;\r\n  }\r\n\r\n  &__main {\r\n    grid-column: 2 2;\r\n  }\r\n}\r\n","h1,\r\nh2,\r\nh3 {\r\n  font-weight: 700;\r\n  line-height: 1.1;\r\n  margin-top: 0;\r\n}\r\n\r\np {\r\n  margin-top: 0;\r\n}\r\n\r\na,\r\na:visited,\r\na:active {\r\n  text-decoration: none;\r\n}\r\n",":root {\r\n  // --background-color: hsl(0, 0%, 11%);\r\n  --background-color: rgba(202, 35, 35, 100);\r\n\r\n  --text-color: hsl(0, 0%, 100%);\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  box-sizing: border-box;\n  font-size: 100%;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: inherit;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: \"Lato\", sans-serif;\n  background-color: var(--background-color);\n  color: var(--text-color);\n}\n\nh2 {\n  font-size: small;\n}\n\nli {\n  list-style: none;\n}\n\nh1,\nh2,\nh3 {\n  font-weight: 700;\n  line-height: 1.1;\n  margin-top: 0;\n}\n\np {\n  margin-top: 0;\n}\n\na,\na:visited,\na:active {\n  text-decoration: none;\n}\n\n:root {\n  --background-color: hsl(0, 0%, 11%);\n  --text-color: hsl(0, 0%, 100%);\n}\n\n.grid {\n  display: grid;\n  grid-template-columns: 1fr 4fr;\n  grid-template-rows: 1fr 5fr;\n  padding: 5px;\n  gap: 1rem;\n  height: 100vh;\n  gap: 1 rem;\n}\n.grid__header {\n  grid-column: 1/1;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  border: 1px solid white;\n  border-radius: 2px 10px 20px;\n  padding: 5px;\n}\n.grid__nav {\n  grid-column: 1/1;\n  display: flex;\n  gap: 2rem;\n  flex-direction: column;\n  width: 100%;\n  border: 1px solid white;\n  border-radius: 2px 10px 20px;\n  justify-content: space-evenly;\n  align-items: center;\n}\n.grid__nav__item {\n  width: 100%;\n  text-decoration: underline;\n  text-decoration-color: rgba(255, 255, 255, 0);\n  padding: 5px;\n  user-select: none;\n  transition: text-decoration-color 500ms;\n}\n.grid__nav__item:hover {\n  text-decoration-color: rgb(255, 255, 255);\n  cursor: pointer;\n}\n.grid__main {\n  grid-column: 2/2;\n  grid-row: 1/3;\n  height: 100%;\n}\n.grid__main__webgl {\n  height: 100%;\n}", "",{"version":3,"sources":["webpack://./src/styles/globals/_boilerplate.scss","webpack://./src/styles/main.scss","webpack://./src/styles/globals/_typography.scss","webpack://./src/styles/globals/_colors.scss"],"names":[],"mappings":"AAAA;EACE,sBAAA;EACA,eAAA;ACCF;;ADEA;;;EAGE,mBAAA;ACCF;;ADEA;EACE,SAAA;EACA,UAAA;EACA,+BAAA;EACA,yCAAA;EACA,wBAAA;ACCF;;ADEA;EACE,gBAAA;ACCF;;ADEA;EACE,gBAAA;ACCF;;ACzBA;;;EAGE,gBAAA;EACA,gBAAA;EACA,aAAA;AD4BF;;ACzBA;EACE,aAAA;AD4BF;;ACzBA;;;EAGE,qBAAA;AD4BF;;AE3CA;EACE,mCAAA;EACA,8BAAA;AF8CF;;AA1CA;EACE,aAAA;EACA,8BAAA;EACA,2BAAA;EAEA,YAAA;EACA,SAAA;EACA,aAAA;EACA,UAAA;AA4CF;AA1CE;EACE,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,WAlBO;EAmBP,uBAlBK;EAmBL,4BAlBQ;EAmBR,YAAA;AA4CJ;AAzCE;EACE,gBAAA;EACA,aAAA;EACA,SAAA;EACA,sBAAA;EACA,WA7BO;EA8BP,uBA7BK;EA8BL,4BA7BQ;EA8BR,6BAAA;EACA,mBAAA;AA2CJ;AAxCE;EACE,WAAA;EACA,0BAAA;EACA,6CAAA;EACA,YAAA;EACA,iBAAA;EAOA,uCAAA;AAoCJ;AAzCI;EACE,yCAAA;EACA,eAAA;AA2CN;AArCE;EACE,gBAAA;EACA,aAAA;EACA,YAAA;AAuCJ;AAnCI;EACE,YAAA;AAqCN","sourcesContent":["html {\r\n  box-sizing: border-box;\r\n  font-size: 100%;\r\n}\r\n\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: inherit;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: \"Lato\", sans-serif;\r\n  background-color: var(--background-color);\r\n  color: var(--text-color);\r\n}\r\n\r\nh2 {\r\n  font-size: small;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n","@forward \"globals\";\r\n\r\n$sidewith: 100%;\r\n$border: 1px solid white;\r\n$borderrad: 2px 10px 20px;\r\n\r\n.grid {\r\n  display: grid;\r\n  grid-template-columns: 1fr 4fr;\r\n  grid-template-rows: 1fr 5fr;\r\n  // border: 2px dotted blue;\r\n  padding: 5px;\r\n  gap: 1rem;\r\n  height: 100vh;\r\n  gap: 1 rem;\r\n\r\n  &__header {\r\n    grid-column: 1 / 1;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: $sidewith;\r\n    border: $border;\r\n    border-radius: $borderrad;\r\n    padding: 5px;\r\n  }\r\n\r\n  &__nav {\r\n    grid-column: 1 / 1;\r\n    display: flex;\r\n    gap: 2rem;\r\n    flex-direction: column;\r\n    width: $sidewith;\r\n    border: $border;\r\n    border-radius: $borderrad;\r\n    justify-content: space-evenly;\r\n    align-items: center;\r\n  }\r\n\r\n  &__nav__item {\r\n    width: 100%;\r\n    text-decoration: underline;\r\n    text-decoration-color: rgb(255, 255, 255, 0);\r\n    padding: 5px;\r\n    user-select: none;\r\n\r\n    &:hover {\r\n      text-decoration-color: rgb(255, 255, 255, 255);\r\n      cursor: pointer;\r\n    }\r\n\r\n    transition: text-decoration-color 500ms;\r\n  }\r\n\r\n  &__main {\r\n    grid-column: 2/2;\r\n    grid-row: 1/3;\r\n    height: 100%;\r\n\r\n    // background-color: white;\r\n\r\n    &__webgl {\r\n      height: 100%;\r\n    }\r\n  }\r\n}\r\n","h1,\r\nh2,\r\nh3 {\r\n  font-weight: 700;\r\n  line-height: 1.1;\r\n  margin-top: 0;\r\n}\r\n\r\np {\r\n  margin-top: 0;\r\n}\r\n\r\na,\r\na:visited,\r\na:active {\r\n  text-decoration: none;\r\n}\r\n",":root {\r\n  --background-color: hsl(0, 0%, 11%);\r\n  --text-color: hsl(0, 0%, 100%);\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -607,6 +607,142 @@ function styleTagTransform(css, styleElement) {
 }
 
 module.exports = styleTagTransform;
+
+/***/ }),
+
+/***/ "./src/CopyShader.js":
+/*!***************************!*\
+  !*** ./src/CopyShader.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CopyShader": () => (/* binding */ CopyShader)
+/* harmony export */ });
+/**
+ * Full-screen textured quad shader
+ */
+
+const CopyShader = {
+  uniforms: {
+    tDiffuse: { value: null },
+    opacity: { value: 1.0 },
+    time: { value: 0.0 },
+  },
+
+  vertexShader: /* glsl */ `
+
+		varying vec2 vUv;
+
+		void main() {
+
+			vUv = uv;
+			gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+		}`,
+
+  fragmentShader: /* glsl */ `
+
+		uniform float opacity;
+
+		uniform sampler2D tDiffuse;
+
+		uniform float time;
+
+		varying vec2 vUv;
+
+		void main() {
+			vec2 uv = vUv;
+			uv -= 0.5;
+
+			vec3 col = vec3(0.);
+
+			col = vec3(1.0-length(uv*10. + sin(time)));
+
+			gl_FragColor.xyz = col;
+			gl_FragColor.a *= opacity;
+
+
+		}`,
+};
+
+
+
+
+/***/ }),
+
+/***/ "./src/canvas.js":
+/*!***********************!*\
+  !*** ./src/canvas.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _styles_globals_boilerplate_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/globals/_boilerplate.scss */ "./src/styles/globals/_boilerplate.scss");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var three_examples_jsm_postprocessing_EffectComposer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three/examples/jsm/postprocessing/EffectComposer.js */ "./node_modules/three/examples/jsm/postprocessing/EffectComposer.js");
+/* harmony import */ var three_examples_jsm_postprocessing_RenderPass_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! three/examples/jsm/postprocessing/RenderPass.js */ "./node_modules/three/examples/jsm/postprocessing/RenderPass.js");
+/* harmony import */ var three_examples_jsm_postprocessing_ShaderPass_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! three/examples/jsm/postprocessing/ShaderPass.js */ "./node_modules/three/examples/jsm/postprocessing/ShaderPass.js");
+/* harmony import */ var _src_CopyShader_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/CopyShader.js */ "./src/CopyShader.js");
+
+
+
+
+
+
+
+
+
+let Canvas = document.querySelector("main");
+let time = 0;
+
+console.log(Canvas);
+
+const scene = new three__WEBPACK_IMPORTED_MODULE_6__.Scene();
+const camera = new three__WEBPACK_IMPORTED_MODULE_6__.PerspectiveCamera(
+  75,
+  Canvas.clientWidth / Canvas.clientHeight,
+  0.1,
+  1000
+);
+
+window.addEventListener("resize", (e) => {
+  Canvas = document.querySelector("main");
+  camera.aspect = Canvas.clientWidth / Canvas.clientHeight;
+});
+
+const renderer = new three__WEBPACK_IMPORTED_MODULE_6__.WebGLRenderer();
+renderer.setSize(Canvas.clientWidth, Canvas.clientHeight);
+document.querySelector(".grid__main__webgl").appendChild(renderer.domElement);
+
+//PLAIN GEOMETRY
+// const geometry = new THREE.BoxGeometry(1, 1, 1);
+// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+// const cube = new THREE.Mesh(geometry, material);
+// scene.add(cube);
+
+// camera.position.z = 5;
+
+//EFFECT COMPOSER
+const composer = new three_examples_jsm_postprocessing_EffectComposer_js__WEBPACK_IMPORTED_MODULE_2__.EffectComposer(renderer);
+
+const pass1 = new three_examples_jsm_postprocessing_ShaderPass_js__WEBPACK_IMPORTED_MODULE_4__.ShaderPass(_src_CopyShader_js__WEBPACK_IMPORTED_MODULE_5__.CopyShader);
+
+const renderPass = new three_examples_jsm_postprocessing_RenderPass_js__WEBPACK_IMPORTED_MODULE_3__.RenderPass(scene, camera);
+composer.addPass(renderPass);
+composer.addPass(pass1);
+
+function animate() {
+  time += 0.1;
+  pass1.uniforms.time.value = time;
+
+  requestAnimationFrame(animate);
+  composer.render();
+}
+animate();
+
 
 /***/ }),
 
@@ -49951,6 +50087,769 @@ if ( typeof window !== 'undefined' ) {
 
 
 
+/***/ }),
+
+/***/ "./node_modules/three/examples/jsm/postprocessing/EffectComposer.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/three/examples/jsm/postprocessing/EffectComposer.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "EffectComposer": () => (/* binding */ EffectComposer),
+/* harmony export */   "FullScreenQuad": () => (/* binding */ FullScreenQuad),
+/* harmony export */   "Pass": () => (/* binding */ Pass)
+/* harmony export */ });
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var _shaders_CopyShader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shaders/CopyShader.js */ "./node_modules/three/examples/jsm/shaders/CopyShader.js");
+/* harmony import */ var _ShaderPass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShaderPass.js */ "./node_modules/three/examples/jsm/postprocessing/ShaderPass.js");
+/* harmony import */ var _MaskPass_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MaskPass.js */ "./node_modules/three/examples/jsm/postprocessing/MaskPass.js");
+
+
+
+
+
+
+class EffectComposer {
+
+	constructor( renderer, renderTarget ) {
+
+		this.renderer = renderer;
+
+		if ( renderTarget === undefined ) {
+
+			const size = renderer.getSize( new three__WEBPACK_IMPORTED_MODULE_3__.Vector2() );
+			this._pixelRatio = renderer.getPixelRatio();
+			this._width = size.width;
+			this._height = size.height;
+
+			renderTarget = new three__WEBPACK_IMPORTED_MODULE_3__.WebGLRenderTarget( this._width * this._pixelRatio, this._height * this._pixelRatio );
+			renderTarget.texture.name = 'EffectComposer.rt1';
+
+		} else {
+
+			this._pixelRatio = 1;
+			this._width = renderTarget.width;
+			this._height = renderTarget.height;
+
+		}
+
+		this.renderTarget1 = renderTarget;
+		this.renderTarget2 = renderTarget.clone();
+		this.renderTarget2.texture.name = 'EffectComposer.rt2';
+
+		this.writeBuffer = this.renderTarget1;
+		this.readBuffer = this.renderTarget2;
+
+		this.renderToScreen = true;
+
+		this.passes = [];
+
+		// dependencies
+
+		if ( _shaders_CopyShader_js__WEBPACK_IMPORTED_MODULE_0__.CopyShader === undefined ) {
+
+			console.error( 'THREE.EffectComposer relies on CopyShader' );
+
+		}
+
+		if ( _ShaderPass_js__WEBPACK_IMPORTED_MODULE_1__.ShaderPass === undefined ) {
+
+			console.error( 'THREE.EffectComposer relies on ShaderPass' );
+
+		}
+
+		this.copyPass = new _ShaderPass_js__WEBPACK_IMPORTED_MODULE_1__.ShaderPass( _shaders_CopyShader_js__WEBPACK_IMPORTED_MODULE_0__.CopyShader );
+
+		this.clock = new three__WEBPACK_IMPORTED_MODULE_3__.Clock();
+
+	}
+
+	swapBuffers() {
+
+		const tmp = this.readBuffer;
+		this.readBuffer = this.writeBuffer;
+		this.writeBuffer = tmp;
+
+	}
+
+	addPass( pass ) {
+
+		this.passes.push( pass );
+		pass.setSize( this._width * this._pixelRatio, this._height * this._pixelRatio );
+
+	}
+
+	insertPass( pass, index ) {
+
+		this.passes.splice( index, 0, pass );
+		pass.setSize( this._width * this._pixelRatio, this._height * this._pixelRatio );
+
+	}
+
+	removePass( pass ) {
+
+		const index = this.passes.indexOf( pass );
+
+		if ( index !== - 1 ) {
+
+			this.passes.splice( index, 1 );
+
+		}
+
+	}
+
+	isLastEnabledPass( passIndex ) {
+
+		for ( let i = passIndex + 1; i < this.passes.length; i ++ ) {
+
+			if ( this.passes[ i ].enabled ) {
+
+				return false;
+
+			}
+
+		}
+
+		return true;
+
+	}
+
+	render( deltaTime ) {
+
+		// deltaTime value is in seconds
+
+		if ( deltaTime === undefined ) {
+
+			deltaTime = this.clock.getDelta();
+
+		}
+
+		const currentRenderTarget = this.renderer.getRenderTarget();
+
+		let maskActive = false;
+
+		for ( let i = 0, il = this.passes.length; i < il; i ++ ) {
+
+			const pass = this.passes[ i ];
+
+			if ( pass.enabled === false ) continue;
+
+			pass.renderToScreen = ( this.renderToScreen && this.isLastEnabledPass( i ) );
+			pass.render( this.renderer, this.writeBuffer, this.readBuffer, deltaTime, maskActive );
+
+			if ( pass.needsSwap ) {
+
+				if ( maskActive ) {
+
+					const context = this.renderer.getContext();
+					const stencil = this.renderer.state.buffers.stencil;
+
+					//context.stencilFunc( context.NOTEQUAL, 1, 0xffffffff );
+					stencil.setFunc( context.NOTEQUAL, 1, 0xffffffff );
+
+					this.copyPass.render( this.renderer, this.writeBuffer, this.readBuffer, deltaTime );
+
+					//context.stencilFunc( context.EQUAL, 1, 0xffffffff );
+					stencil.setFunc( context.EQUAL, 1, 0xffffffff );
+
+				}
+
+				this.swapBuffers();
+
+			}
+
+			if ( _MaskPass_js__WEBPACK_IMPORTED_MODULE_2__.MaskPass !== undefined ) {
+
+				if ( pass instanceof _MaskPass_js__WEBPACK_IMPORTED_MODULE_2__.MaskPass ) {
+
+					maskActive = true;
+
+				} else if ( pass instanceof _MaskPass_js__WEBPACK_IMPORTED_MODULE_2__.ClearMaskPass ) {
+
+					maskActive = false;
+
+				}
+
+			}
+
+		}
+
+		this.renderer.setRenderTarget( currentRenderTarget );
+
+	}
+
+	reset( renderTarget ) {
+
+		if ( renderTarget === undefined ) {
+
+			const size = this.renderer.getSize( new three__WEBPACK_IMPORTED_MODULE_3__.Vector2() );
+			this._pixelRatio = this.renderer.getPixelRatio();
+			this._width = size.width;
+			this._height = size.height;
+
+			renderTarget = this.renderTarget1.clone();
+			renderTarget.setSize( this._width * this._pixelRatio, this._height * this._pixelRatio );
+
+		}
+
+		this.renderTarget1.dispose();
+		this.renderTarget2.dispose();
+		this.renderTarget1 = renderTarget;
+		this.renderTarget2 = renderTarget.clone();
+
+		this.writeBuffer = this.renderTarget1;
+		this.readBuffer = this.renderTarget2;
+
+	}
+
+	setSize( width, height ) {
+
+		this._width = width;
+		this._height = height;
+
+		const effectiveWidth = this._width * this._pixelRatio;
+		const effectiveHeight = this._height * this._pixelRatio;
+
+		this.renderTarget1.setSize( effectiveWidth, effectiveHeight );
+		this.renderTarget2.setSize( effectiveWidth, effectiveHeight );
+
+		for ( let i = 0; i < this.passes.length; i ++ ) {
+
+			this.passes[ i ].setSize( effectiveWidth, effectiveHeight );
+
+		}
+
+	}
+
+	setPixelRatio( pixelRatio ) {
+
+		this._pixelRatio = pixelRatio;
+
+		this.setSize( this._width, this._height );
+
+	}
+
+}
+
+
+class Pass {
+
+	constructor() {
+
+		// if set to true, the pass is processed by the composer
+		this.enabled = true;
+
+		// if set to true, the pass indicates to swap read and write buffer after rendering
+		this.needsSwap = true;
+
+		// if set to true, the pass clears its buffer before rendering
+		this.clear = false;
+
+		// if set to true, the result of the pass is rendered to screen. This is set automatically by EffectComposer.
+		this.renderToScreen = false;
+
+	}
+
+	setSize( /* width, height */ ) {}
+
+	render( /* renderer, writeBuffer, readBuffer, deltaTime, maskActive */ ) {
+
+		console.error( 'THREE.Pass: .render() must be implemented in derived pass.' );
+
+	}
+
+}
+
+// Helper for passes that need to fill the viewport with a single quad.
+
+const _camera = new three__WEBPACK_IMPORTED_MODULE_3__.OrthographicCamera( - 1, 1, 1, - 1, 0, 1 );
+
+// https://github.com/mrdoob/three.js/pull/21358
+
+const _geometry = new three__WEBPACK_IMPORTED_MODULE_3__.BufferGeometry();
+_geometry.setAttribute( 'position', new three__WEBPACK_IMPORTED_MODULE_3__.Float32BufferAttribute( [ - 1, 3, 0, - 1, - 1, 0, 3, - 1, 0 ], 3 ) );
+_geometry.setAttribute( 'uv', new three__WEBPACK_IMPORTED_MODULE_3__.Float32BufferAttribute( [ 0, 2, 0, 0, 2, 0 ], 2 ) );
+
+class FullScreenQuad {
+
+	constructor( material ) {
+
+		this._mesh = new three__WEBPACK_IMPORTED_MODULE_3__.Mesh( _geometry, material );
+
+	}
+
+	dispose() {
+
+		this._mesh.geometry.dispose();
+
+	}
+
+	render( renderer ) {
+
+		renderer.render( this._mesh, _camera );
+
+	}
+
+	get material() {
+
+		return this._mesh.material;
+
+	}
+
+	set material( value ) {
+
+		this._mesh.material = value;
+
+	}
+
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/three/examples/jsm/postprocessing/MaskPass.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/three/examples/jsm/postprocessing/MaskPass.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ClearMaskPass": () => (/* binding */ ClearMaskPass),
+/* harmony export */   "MaskPass": () => (/* binding */ MaskPass)
+/* harmony export */ });
+/* harmony import */ var _Pass_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pass.js */ "./node_modules/three/examples/jsm/postprocessing/Pass.js");
+
+
+class MaskPass extends _Pass_js__WEBPACK_IMPORTED_MODULE_0__.Pass {
+
+	constructor( scene, camera ) {
+
+		super();
+
+		this.scene = scene;
+		this.camera = camera;
+
+		this.clear = true;
+		this.needsSwap = false;
+
+		this.inverse = false;
+
+	}
+
+	render( renderer, writeBuffer, readBuffer /*, deltaTime, maskActive */ ) {
+
+		const context = renderer.getContext();
+		const state = renderer.state;
+
+		// don't update color or depth
+
+		state.buffers.color.setMask( false );
+		state.buffers.depth.setMask( false );
+
+		// lock buffers
+
+		state.buffers.color.setLocked( true );
+		state.buffers.depth.setLocked( true );
+
+		// set up stencil
+
+		let writeValue, clearValue;
+
+		if ( this.inverse ) {
+
+			writeValue = 0;
+			clearValue = 1;
+
+		} else {
+
+			writeValue = 1;
+			clearValue = 0;
+
+		}
+
+		state.buffers.stencil.setTest( true );
+		state.buffers.stencil.setOp( context.REPLACE, context.REPLACE, context.REPLACE );
+		state.buffers.stencil.setFunc( context.ALWAYS, writeValue, 0xffffffff );
+		state.buffers.stencil.setClear( clearValue );
+		state.buffers.stencil.setLocked( true );
+
+		// draw into the stencil buffer
+
+		renderer.setRenderTarget( readBuffer );
+		if ( this.clear ) renderer.clear();
+		renderer.render( this.scene, this.camera );
+
+		renderer.setRenderTarget( writeBuffer );
+		if ( this.clear ) renderer.clear();
+		renderer.render( this.scene, this.camera );
+
+		// unlock color and depth buffer for subsequent rendering
+
+		state.buffers.color.setLocked( false );
+		state.buffers.depth.setLocked( false );
+
+		// only render where stencil is set to 1
+
+		state.buffers.stencil.setLocked( false );
+		state.buffers.stencil.setFunc( context.EQUAL, 1, 0xffffffff ); // draw if == 1
+		state.buffers.stencil.setOp( context.KEEP, context.KEEP, context.KEEP );
+		state.buffers.stencil.setLocked( true );
+
+	}
+
+}
+
+class ClearMaskPass extends _Pass_js__WEBPACK_IMPORTED_MODULE_0__.Pass {
+
+	constructor() {
+
+		super();
+
+		this.needsSwap = false;
+
+	}
+
+	render( renderer /*, writeBuffer, readBuffer, deltaTime, maskActive */ ) {
+
+		renderer.state.buffers.stencil.setLocked( false );
+		renderer.state.buffers.stencil.setTest( false );
+
+	}
+
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/three/examples/jsm/postprocessing/Pass.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/three/examples/jsm/postprocessing/Pass.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FullScreenQuad": () => (/* binding */ FullScreenQuad),
+/* harmony export */   "Pass": () => (/* binding */ Pass)
+/* harmony export */ });
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+class Pass {
+
+	constructor() {
+
+		// if set to true, the pass is processed by the composer
+		this.enabled = true;
+
+		// if set to true, the pass indicates to swap read and write buffer after rendering
+		this.needsSwap = true;
+
+		// if set to true, the pass clears its buffer before rendering
+		this.clear = false;
+
+		// if set to true, the result of the pass is rendered to screen. This is set automatically by EffectComposer.
+		this.renderToScreen = false;
+
+	}
+
+	setSize( /* width, height */ ) {}
+
+	render( /* renderer, writeBuffer, readBuffer, deltaTime, maskActive */ ) {
+
+		console.error( 'THREE.Pass: .render() must be implemented in derived pass.' );
+
+	}
+
+}
+
+// Helper for passes that need to fill the viewport with a single quad.
+
+const _camera = new three__WEBPACK_IMPORTED_MODULE_0__.OrthographicCamera( - 1, 1, 1, - 1, 0, 1 );
+
+// https://github.com/mrdoob/three.js/pull/21358
+
+const _geometry = new three__WEBPACK_IMPORTED_MODULE_0__.BufferGeometry();
+_geometry.setAttribute( 'position', new three__WEBPACK_IMPORTED_MODULE_0__.Float32BufferAttribute( [ - 1, 3, 0, - 1, - 1, 0, 3, - 1, 0 ], 3 ) );
+_geometry.setAttribute( 'uv', new three__WEBPACK_IMPORTED_MODULE_0__.Float32BufferAttribute( [ 0, 2, 0, 0, 2, 0 ], 2 ) );
+
+class FullScreenQuad {
+
+	constructor( material ) {
+
+		this._mesh = new three__WEBPACK_IMPORTED_MODULE_0__.Mesh( _geometry, material );
+
+	}
+
+	dispose() {
+
+		this._mesh.geometry.dispose();
+
+	}
+
+	render( renderer ) {
+
+		renderer.render( this._mesh, _camera );
+
+	}
+
+	get material() {
+
+		return this._mesh.material;
+
+	}
+
+	set material( value ) {
+
+		this._mesh.material = value;
+
+	}
+
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/three/examples/jsm/postprocessing/RenderPass.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/three/examples/jsm/postprocessing/RenderPass.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RenderPass": () => (/* binding */ RenderPass)
+/* harmony export */ });
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var _Pass_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pass.js */ "./node_modules/three/examples/jsm/postprocessing/Pass.js");
+
+
+
+class RenderPass extends _Pass_js__WEBPACK_IMPORTED_MODULE_0__.Pass {
+
+	constructor( scene, camera, overrideMaterial, clearColor, clearAlpha ) {
+
+		super();
+
+		this.scene = scene;
+		this.camera = camera;
+
+		this.overrideMaterial = overrideMaterial;
+
+		this.clearColor = clearColor;
+		this.clearAlpha = ( clearAlpha !== undefined ) ? clearAlpha : 0;
+
+		this.clear = true;
+		this.clearDepth = false;
+		this.needsSwap = false;
+		this._oldClearColor = new three__WEBPACK_IMPORTED_MODULE_1__.Color();
+
+	}
+
+	render( renderer, writeBuffer, readBuffer /*, deltaTime, maskActive */ ) {
+
+		const oldAutoClear = renderer.autoClear;
+		renderer.autoClear = false;
+
+		let oldClearAlpha, oldOverrideMaterial;
+
+		if ( this.overrideMaterial !== undefined ) {
+
+			oldOverrideMaterial = this.scene.overrideMaterial;
+
+			this.scene.overrideMaterial = this.overrideMaterial;
+
+		}
+
+		if ( this.clearColor ) {
+
+			renderer.getClearColor( this._oldClearColor );
+			oldClearAlpha = renderer.getClearAlpha();
+
+			renderer.setClearColor( this.clearColor, this.clearAlpha );
+
+		}
+
+		if ( this.clearDepth ) {
+
+			renderer.clearDepth();
+
+		}
+
+		renderer.setRenderTarget( this.renderToScreen ? null : readBuffer );
+
+		// TODO: Avoid using autoClear properties, see https://github.com/mrdoob/three.js/pull/15571#issuecomment-465669600
+		if ( this.clear ) renderer.clear( renderer.autoClearColor, renderer.autoClearDepth, renderer.autoClearStencil );
+		renderer.render( this.scene, this.camera );
+
+		if ( this.clearColor ) {
+
+			renderer.setClearColor( this._oldClearColor, oldClearAlpha );
+
+		}
+
+		if ( this.overrideMaterial !== undefined ) {
+
+			this.scene.overrideMaterial = oldOverrideMaterial;
+
+		}
+
+		renderer.autoClear = oldAutoClear;
+
+	}
+
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/three/examples/jsm/postprocessing/ShaderPass.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/three/examples/jsm/postprocessing/ShaderPass.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ShaderPass": () => (/* binding */ ShaderPass)
+/* harmony export */ });
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var _Pass_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pass.js */ "./node_modules/three/examples/jsm/postprocessing/Pass.js");
+
+
+
+class ShaderPass extends _Pass_js__WEBPACK_IMPORTED_MODULE_0__.Pass {
+
+	constructor( shader, textureID ) {
+
+		super();
+
+		this.textureID = ( textureID !== undefined ) ? textureID : 'tDiffuse';
+
+		if ( shader instanceof three__WEBPACK_IMPORTED_MODULE_1__.ShaderMaterial ) {
+
+			this.uniforms = shader.uniforms;
+
+			this.material = shader;
+
+		} else if ( shader ) {
+
+			this.uniforms = three__WEBPACK_IMPORTED_MODULE_1__.UniformsUtils.clone( shader.uniforms );
+
+			this.material = new three__WEBPACK_IMPORTED_MODULE_1__.ShaderMaterial( {
+
+				defines: Object.assign( {}, shader.defines ),
+				uniforms: this.uniforms,
+				vertexShader: shader.vertexShader,
+				fragmentShader: shader.fragmentShader
+
+			} );
+
+		}
+
+		this.fsQuad = new _Pass_js__WEBPACK_IMPORTED_MODULE_0__.FullScreenQuad( this.material );
+
+	}
+
+	render( renderer, writeBuffer, readBuffer /*, deltaTime, maskActive */ ) {
+
+		if ( this.uniforms[ this.textureID ] ) {
+
+			this.uniforms[ this.textureID ].value = readBuffer.texture;
+
+		}
+
+		this.fsQuad.material = this.material;
+
+		if ( this.renderToScreen ) {
+
+			renderer.setRenderTarget( null );
+			this.fsQuad.render( renderer );
+
+		} else {
+
+			renderer.setRenderTarget( writeBuffer );
+			// TODO: Avoid using autoClear properties, see https://github.com/mrdoob/three.js/pull/15571#issuecomment-465669600
+			if ( this.clear ) renderer.clear( renderer.autoClearColor, renderer.autoClearDepth, renderer.autoClearStencil );
+			this.fsQuad.render( renderer );
+
+		}
+
+	}
+
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/three/examples/jsm/shaders/CopyShader.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/three/examples/jsm/shaders/CopyShader.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CopyShader": () => (/* binding */ CopyShader)
+/* harmony export */ });
+/**
+ * Full-screen textured quad shader
+ */
+
+const CopyShader = {
+
+	uniforms: {
+
+		'tDiffuse': { value: null },
+		'opacity': { value: 1.0 }
+
+	},
+
+	vertexShader: /* glsl */`
+
+		varying vec2 vUv;
+
+		void main() {
+
+			vUv = uv;
+			gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+		}`,
+
+	fragmentShader: /* glsl */`
+
+		uniform float opacity;
+
+		uniform sampler2D tDiffuse;
+
+		varying vec2 vUv;
+
+		void main() {
+
+			gl_FragColor = texture2D( tDiffuse, vUv );
+			gl_FragColor.a *= opacity;
+
+
+		}`
+
+};
+
+
+
+
 /***/ })
 
 /******/ 	});
@@ -50035,10 +50934,10 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
 /* harmony import */ var _styles_globals_boilerplate_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/globals/_boilerplate.scss */ "./src/styles/globals/_boilerplate.scss");
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var _src_canvas_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/canvas.js */ "./src/canvas.js");
 
 
-// import "../src/canvas.js";
+
 
 
 let WebSynthPage = false;
@@ -50048,97 +50947,65 @@ let VideoPage = false;
 let AudioPage = false;
 let AboutPage = false;
 
-// let MainContent = document.querySelector(".grid__main");
-// let Selector = 0;
+let MainContent = document.querySelector(".grid__main");
+let Selector = 0;
 
-// document.querySelector(".WebSynth").addEventListener("click", (e) => {
-//   Selector = 1;
-//   if (Selector === 1) {
-//     MainContent.innerHTML = "Web Synthesizer";
-//   } else {
-//     MainContent.innerHTML = "";
-//   }
-// });
+document.querySelector(".WebSynth").addEventListener("click", (e) => {
+  Selector = 1;
+  if (Selector === 1) {
+    MainContent.innerHTML = "Web Synthesizer";
+  } else {
+    MainContent.innerHTML = "";
+  }
+});
 
-// document.querySelector(".FogRacer").addEventListener("click", (e) => {
-//   Selector = 2;
-//   if (Selector === 2) {
-//     MainContent.innerHTML = "Fog Racer";
-//   } else {
-//     MainContent.innerHTML = "";
-//   }
-// });
+document.querySelector(".FogRacer").addEventListener("click", (e) => {
+  Selector = 2;
+  if (Selector === 2) {
+    MainContent.innerHTML = "Fog Racer";
+  } else {
+    MainContent.innerHTML = "";
+  }
+});
 
-// document.querySelector(".InteractiveArt").addEventListener("click", (e) => {
-//   Selector = 3;
-//   if (Selector === 3) {
-//     MainContent.innerHTML = "Interactive Art";
-//   } else {
-//     MainContent.innerHTML = "";
-//   }
-// });
+document.querySelector(".InteractiveArt").addEventListener("click", (e) => {
+  Selector = 3;
+  if (Selector === 3) {
+    MainContent.innerHTML = "Interactive Art";
+  } else {
+    MainContent.innerHTML = "";
+  }
+});
 
-// document.querySelector(".Video").addEventListener("click", (e) => {
-//   Selector = 4;
-//   if (Selector === 4) {
-//     MainContent.innerHTML = "Video";
-//   } else {
-//     MainContent.innerHTML = "";
-//   }
-// });
+document.querySelector(".Video").addEventListener("click", (e) => {
+  Selector = 4;
+  if (Selector === 4) {
+    MainContent.innerHTML = "Video";
+  } else {
+    MainContent.innerHTML = "";
+  }
+});
 
-// document.querySelector(".Audio").addEventListener("click", (e) => {
-//   Selector = 5;
-//   if (Selector === 5) {
-//     MainContent.innerHTML = "Audio";
-//   } else {
-//     MainContent.innerHTML = "";
-//   }
-// });
+document.querySelector(".Audio").addEventListener("click", (e) => {
+  Selector = 5;
+  if (Selector === 5) {
+    MainContent.innerHTML = "Audio";
+  } else {
+    MainContent.innerHTML = "";
+  }
+});
 
-// document.querySelector(".About").addEventListener("click", (e) => {
-//   Selector = 6;
-//   if (Selector === 6) {
-//     MainContent.innerHTML = "About";
-//   } else {
-//     MainContent.innerHTML = "";
-//   }
-// });
-
-const scene = new three__WEBPACK_IMPORTED_MODULE_2__.Scene();
-const camera = new three__WEBPACK_IMPORTED_MODULE_2__.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
-
-console.log(three__WEBPACK_IMPORTED_MODULE_2__);
-
-const renderer = new three__WEBPACK_IMPORTED_MODULE_2__.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-const geometry = new three__WEBPACK_IMPORTED_MODULE_2__.BoxGeometry(1, 1, 1);
-const material = new three__WEBPACK_IMPORTED_MODULE_2__.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new three__WEBPACK_IMPORTED_MODULE_2__.Mesh(geometry, material);
-scene.add(cube);
-
-camera.position.z = 5;
-
-function animate() {
-  requestAnimationFrame(animate);
-
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-
-  renderer.render(scene, camera);
-}
-
-animate();
+document.querySelector(".About").addEventListener("click", (e) => {
+  Selector = 6;
+  if (Selector === 6) {
+    MainContent.innerHTML = "About";
+  } else {
+    MainContent.innerHTML = "";
+  }
+});
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=main.59d61112b5fbea48850c.js.map
+//# sourceMappingURL=main.49e2a40ae63e83297374.js.map

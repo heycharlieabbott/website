@@ -1,12 +1,15 @@
 /**
- * Full-screen textured quad shader
+ * Afterimage shader
+ * I created this effect inspired by a demo on codepen:
+ * https://codepen.io/brunoimbrizi/pen/MoRJaN?page=1&
  */
 
-const CopyShader = {
+const AfterimageShader = {
   uniforms: {
-    tDiffuse: { value: null },
-    opacity: { value: 1.0 },
-    times: { value: 0.0 },
+    damp: { value: 0.96 },
+    tOld: { value: null },
+    tNew: { value: null },
+    times: { value: 0 },
     mousex: { value: 0.0 },
     mousey: { value: 0.0 },
   },
@@ -24,16 +27,16 @@ const CopyShader = {
 
   fragmentShader: /* glsl */ `
 
-		uniform float opacity;
-
-		uniform sampler2D tDiffuse;
-
 		uniform float times;
+
+		uniform sampler2D tOld;
+		uniform sampler2D tNew;
 
 		uniform float mousex;
 		uniform float mousey;
 
 		varying vec2 vUv;
+
 
 		//functions
 
@@ -313,52 +316,47 @@ float GetNeighbors (ivec2 p, sampler2D feed, float thresh){
 //raymarching:  GetDist, RayMarch, GetNormal, GetLight
 //simulation:  GetNeighbors
 
-
-
-
 		void main() {
+
 			float time = times;
-			vec2 uv = vUv;
+			vec2 uv = vUv - 0.5;
+
+			
 
 			vec3 maxcol = vec3(.1098,.1098,.1098);
 
-			vec4 texel = texture2D( tDiffuse, uv);
+			vec4 texelOld = texture2D( tOld, vUv );
+			vec4 texelNew = texture2D( tNew, vUv );
 
-			//if including realworld
-			// vec3 col = texel.xyz;
+			uv *= rotate2d(time/10. * snoise(uv*2.));
 
-			//if only shaders
-			vec3 col = vec3(maxcol);
+			vec3 col = texelNew.xyz + (texelOld.xyz*snoise(uv*10. + time/10.));
+
+			col *= dot(texelNew.xyz, texelOld.xyz);
+			
+
+			col *= vec3(1.-length(uv + snoise(uv)));
+
+			uv.y += time/100.;
+
+			col *= snoise(uv*3. + mousex);
+
+			col = max(maxcol,col * 20. + mousex);
+
+			vec2 vcoords = vUv;
+
+			col *= 1. - length(((vcoords) - 0.5)*2.5);
 
 			
 
-			//image initialization
-			uv -= 0.5;
-
-			// vec3 ro = vec3(0.,1.,-5.);
-
-			// float d = RayMarch(ro, normalize(vec3(uv.x,uv.y,1.)));
-
-			// if (d < MAX_DIST){
-			// 	col.xyz = vec3(1.);
-			// }
-			// else (col = maxcol);
-
-	
-
-			col.xyz += snoise(uv + random(uv));
-
-			col *= 1.-length(uv*30. * mousey);
-			
-			// uv.y += time*0.01;
-			col *= 1.-length(sin(uv));
-
-			col.xy *= rotate2d(mousey);
+			col = max(maxcol,col);
 			
 
-			gl_FragColor = vec4(max(maxcol,col),1.);
+			gl_FragColor = vec4(col,1.);
+
+			
 
 		}`,
 };
 
-export { CopyShader };
+export { AfterimageShader };

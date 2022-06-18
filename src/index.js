@@ -66,3 +66,9 @@ document.querySelector(".About").addEventListener("click", (e) => {
     MainContent.innerHTML = "";
   }
 });
+
+document
+  .querySelector(".grid__header__content")
+  .addEventListener("click", (e) => {
+    location.reload();
+  });
