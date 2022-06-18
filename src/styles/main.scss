@@ -38,6 +38,10 @@ $bcolor: hsl(0, 0%, 11%);
       &:hover {
         border-color: $bcolor;
       }
+
+      &:active {
+        background-color: lightblue;
+      }
       transition: border-color 500ms;
     }
 
@@ -83,11 +87,19 @@ $bcolor: hsl(0, 0%, 11%);
     grid-column: 2/2;
     grid-row: 1/3;
     height: 100%;
+    // text-align: center;
 
     // background-color: white;
 
     &__webgl {
       height: 100%;
+    }
+
+    &__texts__about {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 5rem;
     }
   }
 }

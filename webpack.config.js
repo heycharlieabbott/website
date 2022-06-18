@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: ["./src/canvas.js", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.[contenthash].js",
@@ -14,6 +14,14 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|ogg|mp3|wav)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
     ],
   },
