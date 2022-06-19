@@ -70,9 +70,9 @@ $bcolor: hsl(0, 0%, 11%);
 
   &__nav__item {
     width: 100%;
+    padding: 5px;
     text-decoration: underline;
     text-decoration-color: rgb(255, 255, 255, 0);
-    padding: 5px;
     user-select: none;
 
     &:hover {
@@ -97,9 +97,77 @@ $bcolor: hsl(0, 0%, 11%);
 
     &__texts__about {
       display: flex;
+      justify-content: center;
       align-items: center;
+      text-align: center;
+
+      height: 100%;
       flex-direction: column;
-      gap: 5rem;
+      gap: 1rem;
+    }
+
+    &__texts__audio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      height: 100%;
+      flex-direction: column;
+      gap: 1rem;
+
+      & > ul > iframe {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    &__texts__video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      height: 100%;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__texts__interactiveart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      height: 100%;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__texts__fogracer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      height: 100%;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__texts__websynthesizer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      height: 100%;
+      flex-direction: column;
+      gap: 1rem;
+
+      &__frame {
+        background-color: white;
+      }
     }
   }
 }

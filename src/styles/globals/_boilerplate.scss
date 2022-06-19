@@ -24,3 +24,18 @@ h2 {
 li {
   list-style: none;
 }
+
+a {
+  padding: 5px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 255, 255, 0);
+  user-select: none;
+
+  &:hover {
+    text-decoration-color: rgb(255, 255, 255, 255);
+    cursor: pointer;
+  }
+
+  transition: text-decoration-color 500ms;
+}
