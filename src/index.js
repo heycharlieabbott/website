@@ -10,13 +10,6 @@ import Video from "../src/texts/Video.html";
 import Audio from "../src/texts/Audio.html";
 import About from "../src/texts/About.html";
 
-let WebSynthPage = false;
-let FogRacerPage = false;
-let InteractiveArtPage = false;
-let VideoPage = false;
-let AudioPage = false;
-let AboutPage = false;
-
 let MainContent = document.querySelector(".grid__main");
 let Selector = 0;
 

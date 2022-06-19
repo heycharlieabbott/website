@@ -104,6 +104,12 @@ $bcolor: hsl(0, 0%, 11%);
       height: 100%;
       flex-direction: column;
       gap: 1rem;
+
+      &__copyright {
+        position: fixed;
+        top: 97.5%;
+        font-size: 0.7rem;
+      }
     }
 
     &__texts__audio {
