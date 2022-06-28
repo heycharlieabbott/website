@@ -13,58 +13,59 @@ import About from "../src/texts/About.html";
 let MainContent = document.querySelector(".grid__main");
 let Selector = 0;
 
-document.querySelector(".WebSynth").addEventListener("click", (e) => {
-  Selector = 1;
-  if (Selector === 1) {
-    MainContent.innerHTML = WebSynthesizer;
-  } else {
-    MainContent.innerHTML = "";
-  }
+let WebSynthPage = document.querySelector(".WebSynth");
+let FogRacerPage = document.querySelector(".FogRacer");
+let InteractiveArtPage = document.querySelector(".InteractiveArt");
+let VideoPage = document.querySelector(".Video");
+let AudioPage = document.querySelector(".Audio");
+let AboutPage = document.querySelector(".About");
+
+let pagearray = [
+  WebSynthPage,
+  FogRacerPage,
+  InteractiveArtPage,
+  VideoPage,
+  AudioPage,
+  AboutPage,
+];
+
+const pageselector = (page) => {
+  page.style.textDecoration = "underline";
+  pagearray.forEach((val, i) => {
+    if (pagearray[i] !== page) {
+      pagearray[i].style.textDecoration = "";
+    }
+  });
+};
+
+WebSynthPage.addEventListener("click", (e) => {
+  MainContent.innerHTML = WebSynthesizer;
+  pageselector(WebSynthPage);
 });
 
-document.querySelector(".FogRacer").addEventListener("click", (e) => {
-  Selector = 2;
-  if (Selector === 2) {
-    MainContent.innerHTML = FogRacer;
-  } else {
-    MainContent.innerHTML = "";
-  }
+FogRacerPage.addEventListener("click", (e) => {
+  MainContent.innerHTML = FogRacer;
+  pageselector(FogRacerPage);
 });
 
-document.querySelector(".InteractiveArt").addEventListener("click", (e) => {
-  Selector = 3;
-  if (Selector === 3) {
-    MainContent.innerHTML = InteractiveArt;
-  } else {
-    MainContent.innerHTML = "";
-  }
+InteractiveArtPage.addEventListener("click", (e) => {
+  MainContent.innerHTML = InteractiveArt;
+  pageselector(InteractiveArtPage);
 });
 
-document.querySelector(".Video").addEventListener("click", (e) => {
-  Selector = 4;
-  if (Selector === 4) {
-    MainContent.innerHTML = Video;
-  } else {
-    MainContent.innerHTML = "";
-  }
+VideoPage.addEventListener("click", (e) => {
+  MainContent.innerHTML = Video;
+  pageselector(VideoPage);
 });
 
-document.querySelector(".Audio").addEventListener("click", (e) => {
-  Selector = 5;
-  if (Selector === 5) {
-    MainContent.innerHTML = Audio;
-  } else {
-    MainContent.innerHTML = "";
-  }
+AudioPage.addEventListener("click", (e) => {
+  MainContent.innerHTML = Audio;
+  pageselector(AudioPage);
 });
 
-document.querySelector(".About").addEventListener("click", (e) => {
-  Selector = 6;
-  if (Selector === 6) {
-    MainContent.innerHTML = About;
-  } else {
-    MainContent.innerHTML = "";
-  }
+AboutPage.addEventListener("click", (e) => {
+  MainContent.innerHTML = About;
+  pageselector(AboutPage);
 });
 
 document
@@ -76,11 +77,18 @@ document
 document
   .querySelector(".grid__header__button")
   .addEventListener("click", (e) => {
-    sound.playing()
-      ? (document.querySelector(".grid__header__button").innerHTML =
-          "<h2>Sound Off</h2>")
-      : (document.querySelector(".grid__header__button").innerHTML =
-          "<h2>Sound On</h2>");
+    if (sound.playing()) {
+      document.querySelector(".grid__header__button").innerHTML =
+        "<h2>Sound Off</h2>";
+      document.querySelector(".grid__header__button").style.borderColor =
+        "rgb(228, 106, 106)";
+    } else {
+      document.querySelector(".grid__header__button").innerHTML =
+        "<h2>Sound On</h2>";
+      document.querySelector(".grid__header__button").style.borderColor =
+        "rgb(106, 175, 228)";
+    }
+
     sound.playing() ? sound.pause() : sound.play();
   });
 
