@@ -1,8 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: ["./src/canvas.js", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -12,8 +13,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.(scss|css)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ogg|mp3|wav)$/i,
@@ -32,6 +33,7 @@ module.exports = {
       template: "public/index.html",
       favicon: "./public/favicon.ico",
     }),
+    new MiniCssExtractPlugin(),
   ],
   devtool: "source-map",
   devServer: {
