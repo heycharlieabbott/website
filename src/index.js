@@ -1,7 +1,7 @@
 import "./styles/main.scss";
 import "./styles/globals/_boilerplate.scss";
 import "../src/canvas.js";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 import audio1 from "../src/audio1.mp3";
 import WebSynthesizer from "../src/texts/WebSynthesizer.html";
 import FogRacer from "../src/texts/FogRacer.html";
@@ -11,7 +11,6 @@ import Audio from "../src/texts/Audio.html";
 import About from "../src/texts/About.html";
 
 let MainContent = document.querySelector(".grid__main");
-let Selector = 0;
 
 let WebSynthPage = document.querySelector(".WebSynth");
 let FogRacerPage = document.querySelector(".FogRacer");
