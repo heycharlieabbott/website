@@ -28,8 +28,39 @@ let pagearray = [
   AboutPage,
 ];
 
-const pageselector = (page) => {
+let hovertimeline = gsap.timeline({ defaults: { duration: 0.2 } });
+
+const pageselector = (page, html) => {
+  MainContent.innerHTML = html;
   page.style.textDecoration = "underline";
+
+  document.querySelectorAll("a").forEach((val, i) => {
+    val.addEventListener("mouseover", (e) => {
+      gsap
+        .fromTo(
+          val,
+          { textDecorationColor: "rgb(255, 255, 255, 255)" },
+          {
+            textDecorationColor: "rgb(255, 255, 255, 0)",
+            duration: 1.2,
+          }
+        )
+        .repeat(-1);
+      //   .to(val, {
+      //     duration: 1,
+      //     textDecorationColor: "rgb(255, 255, 255, 255)",
+      //   })
+      //   .to(val, {
+      //     duration: 1,
+      //     textDecorationColor: "rgb(255, 255, 255, 0)",
+      //   });
+      // hovertimeline.repeat(-1);
+    });
+    val.addEventListener("mouseleave", (e) => {
+      hovertimeline.repeat(0);
+    });
+  });
+
   pagearray.forEach((val, i) => {
     if (pagearray[i] !== page) {
       pagearray[i].style.textDecoration = "";
@@ -38,33 +69,27 @@ const pageselector = (page) => {
 };
 
 WebSynthPage.addEventListener("click", (e) => {
-  MainContent.innerHTML = WebSynthesizer;
-  pageselector(WebSynthPage);
+  pageselector(WebSynthPage, WebSynthesizer);
 });
 
 FogRacerPage.addEventListener("click", (e) => {
-  MainContent.innerHTML = FogRacer;
-  pageselector(FogRacerPage);
+  pageselector(FogRacerPage, FogRacer);
 });
 
 InteractiveArtPage.addEventListener("click", (e) => {
-  MainContent.innerHTML = InteractiveArt;
-  pageselector(InteractiveArtPage);
+  pageselector(InteractiveArtPage, InteractiveArt);
 });
 
 VideoPage.addEventListener("click", (e) => {
-  MainContent.innerHTML = Video;
-  pageselector(VideoPage);
+  pageselector(VideoPage, Video);
 });
 
 AudioPage.addEventListener("click", (e) => {
-  MainContent.innerHTML = Audio;
-  pageselector(AudioPage);
+  pageselector(AudioPage, Audio);
 });
 
 AboutPage.addEventListener("click", (e) => {
-  MainContent.innerHTML = About;
-  pageselector(AboutPage);
+  pageselector(AboutPage, About);
 });
 
 document
