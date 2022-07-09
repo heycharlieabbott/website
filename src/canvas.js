@@ -25,6 +25,7 @@ const camera = new THREE.PerspectiveCamera(
 window.addEventListener("resize", (e) => {
   Canvas = document.querySelector("main");
   camera.aspect = Canvas.clientWidth / Canvas.clientHeight;
+  renderer.setSize(Canvas.clientWidth, Canvas.clientHeight);
 });
 
 const renderer = new THREE.WebGLRenderer();
@@ -62,7 +63,6 @@ window.addEventListener("mousemove", (e) => {
 });
 
 window.addEventListener("touchmove", (e) => {
-  console.log(e);
   mousex = e.touches[0].clientX;
   mousey = e.touches[0].clientY;
 
