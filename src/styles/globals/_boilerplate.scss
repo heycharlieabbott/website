@@ -1,7 +1,10 @@
+@use "./breakpoints" as b;
+
 html {
   box-sizing: border-box;
   font-size: 100%;
   text-underline-offset: 2px;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -34,9 +37,13 @@ a {
   user-select: none;
 
   &:hover {
-    // text-decoration-color: rgb(255, 255, 255, 255);
     cursor: pointer;
+    text-decoration-color: rgb(255, 255, 255, 255);
   }
 
   transition: text-decoration-color 500ms;
+
+  @include b.breakpoint-down(small) {
+    text-decoration-color: rgb(255, 255, 255, 255);
+  }
 }
