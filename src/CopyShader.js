@@ -1,12 +1,16 @@
 /**
  * Full-screen textured quad shader
+This shader and shaderpass were extended from the three.js CopyShader.js and Pass.js files:
+https://github.com/mrdoob/three.js/blob/d33b929e2f7f168fa38214f3fb898eee2ac55156/examples/jsm/shaders/CopyShader.js#L5
+https://github.com/mrdoob/three.js/blob/d33b929e2f7f168fa38214f3fb898eee2ac55156/examples/jsm/postprocessing/Pass.js
  */
+
 
 const CopyShader = {
   uniforms: {
     tDiffuse: { value: null },
     opacity: { value: 1.0 },
-    times: { value: 0.0 },
+    time: { value: 0.0 },
     mousex: { value: 0.0 },
     mousey: { value: 0.0 },
   },
@@ -28,7 +32,7 @@ const CopyShader = {
 
 		uniform sampler2D tDiffuse;
 
-		uniform float times;
+		uniform float time;
 
 		uniform float mousex;
 		uniform float mousey;
@@ -235,127 +239,24 @@ float snoise(vec2 v) {
     return 130.0 * dot(m, g);
 }
 
-
-//Raymarching functions
-
-#define MAX_STEPS 100
-#define MAX_DIST 100.
-#define SURF_DIST .01 
-
-float GetDist(vec3 p){
-	vec4 s = vec4(0.,1.,0.,1.);
-
-	//vec3 modvec = vec3(0.);
-    //p = (mod(p,modvec) - modvec/2.);
-
-	float planeDist = p.y;
-
-	float sphereDist = length(p - s.xyz) - s.w;
-	
-
-	float d = min(sphereDist,planeDist);
-	return sphereDist;
-}
-
-float RayMarch(vec3 ro, vec3 rd){
-	float dO = 0.;
-
-	for (int i = 0; i < MAX_STEPS; i++){
-		vec3 p = ro + rd * dO;
-		float dS = GetDist(p);
-		dO += dS;
-		if (dO > MAX_DIST || dS < SURF_DIST) break;
-	}
-
-	return dO;
-}
-
-vec3 GetNormal(vec3 p){
-	float d = GetDist(p);
-	vec2 e = vec2(0.1,0.);
-
-	vec3 n = (d) - vec3(
-		GetDist(p - e.xyy),
-		GetDist(p - e.yxy),
-		GetDist(p - e.yyx)
-	);
-
-	return normalize(n);
-}
-
-float GetLight(vec3 p){
-	vec3 lightPos = vec3(cos(times/10.)*7.,5. + sin(times/7.) * 3.,6);
-	vec3 l = normalize(lightPos - p)/vec3(2.);
-	vec3 n = GetNormal(p);
-
-	float dif = clamp(dot(n,l),0.,1.);
-	float d = RayMarch(p + n*SURF_DIST * 2.,l);
-	if (d < length(lightPos -p)){
-		dif *= .2;
-	}
-
-	return dif;
-}
-
-float GetNeighbors (ivec2 p, sampler2D feed, float thresh){
-    float num = 0.;
-
-    for (int y = -2; y <= 2; y ++){
-      for (int x = -2; x <= 2; x ++){
-        if (x == 0 && y == 0) continue;
-        num += texelFetch(feed, p + ivec2(x,y),0).r > thresh ? 1. : 0.;
-      }
-    }
-    return num;
-}
-
-//functions:  rotate2d, random, fbm, cnoise, snoise
-//raymarching:  GetDist, RayMarch, GetNormal, GetLight
-//simulation:  GetNeighbors
-
-
-
-
 		void main() {
-			float time = times;
 			vec2 uv = vUv;
 
 			vec3 maxcol = vec3(.1098,.1098,.1098);
 
 			vec4 texel = texture2D( tDiffuse, uv);
 
-			//if including realworld
-			// vec3 col = texel.xyz;
-
-			//if only shaders
 			vec3 col = vec3(maxcol);
-
-			
-
-			//image initialization
 			uv -= 0.5;
-
-			// vec3 ro = vec3(0.,1.,-5.);
-
-			// float d = RayMarch(ro, normalize(vec3(uv.x,uv.y,1.)));
-
-			// if (d < MAX_DIST){
-			// 	col.xyz = vec3(1.);
-			// }
-			// else (col = maxcol);
-
-	
 
 			col.xyz += snoise(uv + random(uv));
 
 			col *= 1.-length(uv*30. * mousey);
 			
-			// uv.y += time*0.01;
 			col *= 1.-length(sin(uv));
 
 			col.xy *= rotate2d(mousey);
 			
-
 			gl_FragColor = vec4(max(maxcol,col),1.);
 
 		}`,

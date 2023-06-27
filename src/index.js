@@ -32,34 +32,6 @@ let hovertimeline = gsap.timeline({ defaults: { duration: 0.2 } });
 
 const pageselector = (page, html) => {
   MainContent.innerHTML = html;
-  // page.style.textDecoration = "underline";
-
-  // document.querySelectorAll("a").forEach((val, i) => {
-  //   val.addEventListener("mouseover", (e) => {
-  //     gsap
-  //       .fromTo(
-  //         val,
-  //         { textDecorationColor: "rgb(255, 255, 255, 255)" },
-  //         {
-  //           textDecorationColor: "rgb(255, 255, 255, 0)",
-  //           duration: 1.2,
-  //         }
-  //       )
-  //       .repeat(-1);
-  //     //   .to(val, {
-  //     //     duration: 1,
-  //     //     textDecorationColor: "rgb(255, 255, 255, 255)",
-  //     //   })
-  //     //   .to(val, {
-  //     //     duration: 1,
-  //     //     textDecorationColor: "rgb(255, 255, 255, 0)",
-  //     //   });
-  //     // hovertimeline.repeat(-1);
-  //   });
-  //   val.addEventListener("mouseleave", (e) => {
-  //     hovertimeline.repeat(0);
-  //   });
-  // });
 
   pagearray.forEach((val, i) => {
     if (pagearray[i] !== page) {

@@ -1,3 +1,9 @@
+/**
+This shader and shaderpass were extended from the three.js CopyShader.js and Pass.js files:
+https://github.com/mrdoob/three.js/blob/d33b929e2f7f168fa38214f3fb898eee2ac55156/examples/jsm/shaders/CopyShader.js#L5
+https://github.com/mrdoob/three.js/blob/d33b929e2f7f168fa38214f3fb898eee2ac55156/examples/jsm/postprocessing/Pass.js
+ */
+
 import {
 	BufferGeometry,
 	Float32BufferAttribute,

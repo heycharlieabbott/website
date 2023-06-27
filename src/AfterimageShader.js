@@ -1,7 +1,7 @@
 /**
- * Afterimage shader
- * I created this effect inspired by a demo on codepen:
- * https://codepen.io/brunoimbrizi/pen/MoRJaN?page=1&
+This shader and shaderpass were extended from the three.js AfterimageShader.js and AfterimagePass.js files:
+https://github.com/mrdoob/three.js/blob/dev/examples/jsm/shaders/AfterimageShader.js
+https://github.com/mrdoob/three.js/blob/dev/examples/jsm/postprocessing/AfterimagePass.js
  */
 
 const AfterimageShader = {
@@ -9,7 +9,7 @@ const AfterimageShader = {
     damp: { value: 0.96 },
     tOld: { value: null },
     tNew: { value: null },
-    times: { value: 0 },
+    time: { value: 0 },
     mousex: { value: 0.0 },
     mousey: { value: 0.0 },
   },
@@ -27,7 +27,7 @@ const AfterimageShader = {
 
   fragmentShader: /* glsl */ `
 
-		uniform float times;
+		uniform float time;
 
 		uniform sampler2D tOld;
 		uniform sampler2D tNew;
@@ -239,86 +239,8 @@ float snoise(vec2 v) {
 }
 
 
-//Raymarching functions
-
-#define MAX_STEPS 100
-#define MAX_DIST 100.
-#define SURF_DIST .01 
-
-float GetDist(vec3 p){
-	vec4 s = vec4(0.,1.,0.,1.);
-
-	//vec3 modvec = vec3(0.);
-    //p = (mod(p,modvec) - modvec/2.);
-
-	float planeDist = p.y;
-
-	float sphereDist = length(p - s.xyz) - s.w;
-	
-
-	float d = min(sphereDist,planeDist);
-	return sphereDist;
-}
-
-float RayMarch(vec3 ro, vec3 rd){
-	float dO = 0.;
-
-	for (int i = 0; i < MAX_STEPS; i++){
-		vec3 p = ro + rd * dO;
-		float dS = GetDist(p);
-		dO += dS;
-		if (dO > MAX_DIST || dS < SURF_DIST) break;
-	}
-
-	return dO;
-}
-
-vec3 GetNormal(vec3 p){
-	float d = GetDist(p);
-	vec2 e = vec2(0.1,0.);
-
-	vec3 n = (d) - vec3(
-		GetDist(p - e.xyy),
-		GetDist(p - e.yxy),
-		GetDist(p - e.yyx)
-	);
-
-	return normalize(n);
-}
-
-float GetLight(vec3 p){
-	vec3 lightPos = vec3(cos(times/10.)*7.,5. + sin(times/7.) * 3.,6);
-	vec3 l = normalize(lightPos - p)/vec3(2.);
-	vec3 n = GetNormal(p);
-
-	float dif = clamp(dot(n,l),0.,1.);
-	float d = RayMarch(p + n*SURF_DIST * 2.,l);
-	if (d < length(lightPos -p)){
-		dif *= .2;
-	}
-
-	return dif;
-}
-
-float GetNeighbors (ivec2 p, sampler2D feed, float thresh){
-    float num = 0.;
-
-    for (int y = -2; y <= 2; y ++){
-      for (int x = -2; x <= 2; x ++){
-        if (x == 0 && y == 0) continue;
-        num += texelFetch(feed, p + ivec2(x,y),0).r > thresh ? 1. : 0.;
-      }
-    }
-    return num;
-}
-
-//functions:  rotate2d, random, fbm, cnoise, snoise
-//raymarching:  GetDist, RayMarch, GetNormal, GetLight
-//simulation:  GetNeighbors
-
 		void main() {
 
-			float time = times;
 			vec2 uv = vUv - 0.5;
 
 			
@@ -346,8 +268,6 @@ float GetNeighbors (ivec2 p, sampler2D feed, float thresh){
 			vec2 vcoords = vUv;
 
 			col *= 1. - length(((vcoords) - 0.5)*2.5);
-
-			
 
 			col = max(maxcol,col);
 			

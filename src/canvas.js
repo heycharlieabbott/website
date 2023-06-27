@@ -10,7 +10,7 @@ import { AfterimageShader } from "../src/AfterimageShader.js";
 import { AfterimagePass } from "../src/AfterimagePass";
 
 let Canvas = document.querySelector("main");
-let times = 0;
+let time = 0;
 let mousex = 0;
 let mousey = 0;
 
@@ -74,9 +74,9 @@ window.addEventListener("touchmove", (e) => {
 });
 
 function animate() {
-  times += 0.1;
-  pass1.uniforms.times.value = times;
-  pass2.uniforms.times.value = times;
+  time += 0.1;
+  pass1.uniforms.time.value = time;
+  pass2.uniforms.time.value = time;
 
   requestAnimationFrame(animate);
   composer.render();

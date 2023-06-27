@@ -1,3 +1,9 @@
+/**
+This shader and shaderpass were extended from the three.js AfterimageShader.js and AfterimagePass.js files:
+https://github.com/mrdoob/three.js/blob/dev/examples/jsm/shaders/AfterimageShader.js
+https://github.com/mrdoob/three.js/blob/dev/examples/jsm/postprocessing/AfterimagePass.js
+ */
+
 import {
   MeshBasicMaterial,
   NearestFilter,
