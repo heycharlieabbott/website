@@ -64,21 +64,11 @@ $mobileborderrad: 10px;
         cursor: pointer;
       }
 
-      // &:active {
-      //   background-color: lightblue;
-      // }
+  
       transition: border-color 500ms;
     }
 
-    // &:hover {
-    //   background-color: white;
-    //   color: $bcolor;
-    //   cursor: pointer;
-    //   border-color: $bcolor;
-    //   &:hover {
-    //     box-shadow: 0px -0px 10px 2px $navshadow;
-    //   }
-    // }
+
     transition: box-shadow 500ms;
     transition: color 500ms;
     transition: background-color 500ms;
